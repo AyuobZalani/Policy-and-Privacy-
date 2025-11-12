@@ -1,382 +1,818 @@
-<!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أهمية التبرع بالدم - مشروع العلوم الطبيعية</title>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="An educational website about the importance of blood donation, its conditions and benefits - Natural Sciences project for the fourth year of middle school - Eid Falah Middle School in Berrihan">
+
+<title>The Importance of Blood Donation - Eid Falah Middle School in Berrihan</title>
+
+<!-- Google Fonts - Noto Sans Arabic -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!--Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
     <style>
-        /* تنسيقات عامة */
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Noto Sans Arabic', sans-serif;
         }
         
-        body {
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
+        html {
+            scroll-behavior: smooth;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.6), rgba(0,0,0,0.7));
         }
         
-        /* تنسيقات الهيدر */
-        header {
-            background: linear-gradient(135deg, #c00 0%, #a00 100%);
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        .stat-card:hover {
+             transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
         
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        
-        header p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        /* تنسيقات التنقل */
-        nav {
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            padding: 15px 0;
-        }
-        
-        nav ul li {
-            margin: 0 15px;
-        }
-        
-        nav ul li a {
-            text-decoration: none;
-            color: #c00;
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-        
-        nav ul li a:hover {
-            background-color: #c00;
+        .tab-button.active {
+            background-color: #dc2626;
             color: white;
         }
         
-        /* تنسيقات الأقسام */
-        section {
-            padding: 60px 0;
-            background-color: white;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        section:nth-child(even) {
-            background-color: #f5f5f5;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #c00;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: #c00;
-        }
-        
-        .content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* تنسيقات البطاقات */
-        .cards-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-        }
-        
-        .card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 25px;
-            flex: 1 1 300px;
-            max-width: 350px;
-            transition: transform 0.3s ease;
-        }
-        
-        .card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .card h3 {
-            color: #c00;
-            margin-bottom: 15px;
-            text-align: center;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 10px;
-        }
-        
-        .card ul {
-            list-style-type: none;
-            padding-right: 20px;
-        }
-        
-        .card ul li {
-            margin-bottom: 10px;
-            position: relative;
-        }
-        
-        .card ul li::before {
-            content: "•";
-            color: #c00;
-            font-weight: bold;
-            position: absolute;
-            right: -15px;
-        }
-        
-        /* تنسيقات الجدول */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        th, td {
-            padding: 12px 15px;
-            text-align: right;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        th {
-            background-color: #c00;
-            color: white;
-        }
-        
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        
-        /* تنسيقات الفوتر */
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-        
-        footer p {
-            margin-bottom: 10px;
-        }
-        
-        /* تنسيقات الاستجابة */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            nav ul li {
-                margin: 5px 0;
-            }
-            
-            header h1 {
-                font-size: 2rem;
-            }
-            
-            .card {
-                flex: 1 1 100%;
-            }
+        #donor-benefits.hidden,
+        #society-benefits.hidden {
+            display: none;
         }
     </style>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#dc2626',
+                        'primary-dark': '#b91c1c',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <!-- الهيدر -->
-    <header>
-        <div class="container">
-            <h1>أهمية التبرع بالدم</h1>
-            <p>مشروع العلوم الطبيعية - مستوى الرابع متوسط - متوسطة عيد فلاح - بريحان</p>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between gap-4 flex-wrap">
+                <div class="flex items-center gap-3">
+                    <div class="bg-red-50 p-2 rounded-md">
+                        <i data-lucide="droplet" class="w-6 h-6 text-red-600"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-lg font-bold text-gray-900">متوسطة عيد فلاح</h1>
+                        <p class="text-xs text-gray-600">بريحان - السنة الرابعة متوسط</p>
+                    </div>
+                </div>
+                
+                <nav class="flex items-center gap-1 flex-wrap">
+                    <a href="#home" class="px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-md transition-colors">الرئيسية</a>
+                    <a href="#importance" class="px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-md transition-colors">الأهمية</a>
+                    <a href="#conditions" class="px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-md transition-colors">الشروط</a>
+                    <a href="#benefits" class="px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-md transition-colors">الفوائد</a>
+                    <a href="#blood-types" class="px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-md transition-colors">فصائل الدم</a>
+                </nav>
+            </div>
         </div>
     </header>
-    
-    <!-- التنقل -->
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#importance">أهمية التبرع</a></li>
-                <li><a href="#benefits">فوائد التبرع</a></li>
-                <li><a href="#conditions">شروط التبرع</a></li>
-                <li><a href="#process">مراحل التبرع</a></li>
-            </ul>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-[60vh] flex items-center justify-center overflow-hidden" style="background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1615461066841-6116e61058f4?w=1200') center/cover;">
+        <div class="relative z-10 max-w-4xl mx-auto px-6 py-20 text-center">
+            <div class="inline-flex items-center gap-2 bg-red-600/20 backdrop-blur-sm border border-red-500/30 px-4 py-2 rounded-full mb-6">
+                <i data-lucide="heart" class="w-4 h-4 text-white" fill="currentColor"></i>
+                <span class="text-sm font-medium text-white">مشروع العلوم الطبيعية</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                أهمية التبرع بالدم
+            </h1>
+            
+            <p class="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-2xl mx-auto">
+                قطرة دم واحدة يمكن أن تنقذ حياة إنسان. تعرف على أهمية التبرع بالدم، شروطه وفوائده للمتبرع والمجتمع
+            </p>
+            
+            <a href="#importance" class="inline-block bg-red-600/90 hover:bg-red-600 text-white font-semibold px-8 py-3 rounded-md transition-colors">
+                اكتشف المزيد
+            </a>
         </div>
-    </nav>
-    
-    <!-- قسم المقدمة -->
-    <section id="intro">
-        <div class="container">
-            <h2 class="section-title">مقدمة عن التبرع بالدم</h2>
-            <div class="content">
-                <p>التبرع بالدم هو عملية سحب كمية من الدم من شخص سليم لاستخدامها في إنقاذ حياة شخص آخر. يعتبر التبرع بالدم عملاً إنسانياً نبيلاً ينقذ حياة الملايين حول العالم كل عام. في هذا المشروع، سنستعرض أهمية التبرع بالدم، وفوائده، وشروطه، ومراحل عملية التبرع.</p>
+    </section>
+
+    <!-- Importance Section -->
+    <section id="importance" class="py-12 md:py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                    لماذا التبرع بالدم مهم؟
+                </h2>
+                <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    التبرع بالدم عمل إنساني نبيل يساهم في إنقاذ الأرواح وتحسين صحة المجتمع. إليك بعض الحقائق المهمة
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                <!-- Stat Card 1 -->
+                <div class="stat-card bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-red-50 p-3 rounded-md">
+                            <i data-lucide="users" class="w-6 h-6 text-red-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="text-2xl font-bold text-red-600 mb-1">1 من 3</div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">يحتاج للدم</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                شخص واحد من كل ثلاثة أشخاص يحتاج لنقل دم خلال حياته
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stat Card 2 -->
+                <div class="stat-card bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-red-50 p-3 rounded-md">
+                            <i data-lucide="heart" class="w-6 h-6 text-red-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="text-2xl font-bold text-red-600 mb-1">3 أرواح</div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">تنقذ بتبرع واحد</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                تبرع واحد بالدم يمكن أن يساعد في إنقاذ ثلاثة أرواح
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stat Card 3 -->
+                <div class="stat-card bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-red-50 p-3 rounded-md">
+                            <i data-lucide="activity" class="w-6 h-6 text-red-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="text-2xl font-bold text-red-600 mb-1">45 دقيقة</div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">مدة التبرع</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                عملية التبرع بالدم تستغرق من 30 إلى 45 دقيقة فقط
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stat Card 4 -->
+                <div class="stat-card bg-white border border-gray-200 rounded-lg p-6 transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-red-50 p-3 rounded-md">
+                            <i data-lucide="trending-up" class="w-6 h-6 text-red-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="text-2xl font-bold text-red-600 mb-1">كل 3 ثوان</div>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">حاجة مستمرة</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                شخص يحتاج للدم كل ثلاث ثوان في مكان ما حول العالم
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 border border-gray-200 rounded-lg p-8">
+                <h3 class="text-xl font-bold text-gray-900 mb-4">الحاجة المستمرة للدم</h3>
+                <div class="space-y-4 text-gray-600">
+                    <p class="leading-relaxed">
+                        • <strong class="text-gray-900">حالات الطوارئ:</strong> الحوادث والإصابات الخطيرة تتطلب كميات كبيرة من الدم بشكل فوري
+                    </p>
+                    <p class="leading-relaxed">
+                        • <strong class="text-gray-900">العمليات الجراحية:</strong> العديد من العمليات الجراحية تحتاج إلى نقل دم لضمان نجاحها
+                    </p>
+                    <p class="leading-relaxed">
+                        • <strong class="text-gray-900">الأمراض المزمنة:</strong> مرضى السرطان وفقر الدم يحتاجون لنقل دم بشكل منتظم
+                    </p>
+                    <p class="leading-relaxed">
+                        • <strong class="text-gray-900">الولادة:</strong> بعض حالات الولادة قد تتطلب نقل دم لإنقاذ حياة الأم والطفل
+                    </p>
+                </div>
             </div>
         </div>
     </section>
-    
-    <!-- قسم أهمية التبرع -->
-    <section id="importance">
-        <div class="container">
-            <h2 class="section-title">أهمية التبرع بالدم</h2>
-            <div class="content">
-                <p>يعد التبرع بالدم من أهم الأعمال الإنسانية التي يمكن أن يقوم بها الفرد، وذلك للأسباب التالية:</p>
-                <div class="cards-container">
-                    <div class="card">
-                        <h3>إنقاذ الأرواح</h3>
-                        <p>كل تبرع بالدم يمكن أن ينقذ حياة ثلاثة أشخاص على الأقل، حيث يتم فصل الدم إلى مكوناته (كرات الدم الحمراء، البلازما، الصفائح الدموية).</p>
+
+    <!-- Conditions Section -->
+    <section id="conditions" class="py-12 md:py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                    شروط التبرع بالدم
+                </h2>
+                <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    لضمان سلامة المتبرع والمستفيد، يجب توفر بعض الشروط الأساسية للتبرع بالدم
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                <!-- Condition 1 -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-start justify-between gap-4 mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-red-50 p-2 rounded-md">
+                                <i data-lucide="calendar" class="w-5 h-5 text-red-600"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900">العمر المناسب</h3>
+                        </div>
+                        <span class="bg-red-600 text-white text-xs px-3 py-1 rounded-full">إلزامي</span>
                     </div>
-                    <div class="card">
-                        <h3>تعزيز الصحة العامة</h3>
-                        <p>يساعد التبرع بالدم في تحسين صحة المتبرع من خلال تحفيز نخاع العظم على إنتاج خلايا دم جديدة.</p>
+                    <ul class="space-y-2">
+                        <li class="text-sm text-gray-600 flex items-start gap-2">
+                            <span class="text-red-600 mt-1">•</span>
+                            <span class="flex-1">من 18 إلى 65 سنة</span>
+                        </li>
+                        <li class="text-sm text-gray-600 flex items-start gap-2">
+                            <span class="text-red-600 mt-1">•</span>
+                            <span class="flex-1">يمكن للأشخاص فوق 65 سنة التبرع بموافقة طبية</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Condition 2 -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-start justify-between gap-4 mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-red-50 p-2 rounded-md">
+                                <i data-lucide="weight" class="w-5 h-5 text-red-600"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900">الوزن الأدنى</h3>
+                        </div>
+                        <span class="bg-red-600 text-white text-xs px-3 py-1 rounded-full">إلزامي</span>
                     </div>
-                    <div class="card">
-                        <h3>تعزيز التكافل الاجتماعي</h3>
-                        <p>التبرع بالدم يعزز روح التكافل والتعاون بين أفراد المجتمع، حيث يساعد في بناء مجتمع صحي ومترابط.</p>
+                    <ul class="space-y-2">
+                        <li class="text-sm text-gray-600 flex items-start gap-2">
+                            <span class="text-red-600 mt-1">•</span>
+                            <span class="flex-1">لا يقل عن 50 كيلوغرام</span>
+                        </li>
+                        <li class="text-sm text-gray-600 flex items-start gap-2">
+                            <span class="text-red-600 mt-1">•</span>
+                            <span class="flex-1">الوزن المناسب يضمن سلامة المتبرع</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Condition 3 -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-start justify-between gap-4 mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-red-50 p-2 rounded-md">
+                                <i data-lucide="heart-pulse" class="w-5 h-5 text-red-600"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900">الصحة العامة</h3>
+                        </div>
+                        <span class="bg-red-600 text-white text-xs px-3 py-1 rounded-full">إلزامي</span>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="text-sm text-gray-600 flex items-start gap-2">
+                            <span class="text-red-600 mt-1">•</span>
+                            <span class="flex-1">أن يكون بصحة جيدة</span>
+                        </li>
+                        <li class="text-sm text-gray-600 flex items-start gap-2">
+                            <span class="text-red-600 mt-1">•</span>
+                            <span class="flex-1">خالي من الأمراض المعدية</span>
+                        </li>
+                        <li class="text-sm text-gray-600 flex items-start gap-2">
+                            <span class="text-red-600 mt-1">•</span>
+                            <span class="flex-1">ضغط دم طبيعي</span>
+                        </li>
+                        <li class="text-sm text-gray-600 flex items-start gap-2">
+                            <span class="text-red-600 mt-1">•</span>
+                            <span class="flex-1">نسبة هيموجلوبين مناسبة</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Condition 4 -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-start justify-between gap-4 mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="bg-red-50 p-2 rounded-md">
+                                <i data-lucide="clipboard-check" class="w-5 h-5 text-red-600"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900">شروط إضافية</h3>
+                        </div>
+                        <span class="bg-gray-200 text-gray-800 text-xs px-3 py-1 rounded-full">مهم</span>
+                    </div>
+                    <ul class="space-y-2">
+                        <li class="text-sm text-gray-600 flex items-start gap-2">
+                            <span class="text-red-600 mt-1">•</span>
+                            <span class="flex-1">عدم التبرع إذا كنت مريضاً</span>
+                        </li>
+                        <li class="text-sm text-gray-600 flex items-start gap-2">
+                            <span class="text-red-600 mt-1">•</span>
+                            <span class="flex-1">الانتظار 3 أشهر بين كل تبرعين</span>
+                        </li>
+                        <li class="text-sm text-gray-600 flex items-start gap-2">
+                            <span class="text-red-600 mt-1">•</span>
+                            <span class="flex-1">عدم الصيام قبل التبرع</span>
+                        </li>
+                        <li class="text-sm text-gray-600 flex items-start gap-2">
+                            <span class="text-red-600 mt-1">•</span>
+                            <span class="flex-1">شرب الكثير من السوائل</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-red-50 border border-red-200 rounded-lg p-6 md:p-8">
+                <div class="flex items-start gap-3 mb-4">
+                    <i data-lucide="alert-circle" class="w-6 h-6 text-red-600 shrink-0 mt-1"></i>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">حالات لا يسمح فيها بالتبرع</h3>
+                        <p class="text-sm text-gray-600 mb-4">
+                            الأشخاص التالية حالاتهم لا يمكنهم التبرع بالدم لحماية صحتهم وصحة المستفيدين:
+                        </p>
+                    </div>
+                </div>
+                <ul class="space-y-3">
+                    <li class="text-sm text-gray-600 flex items-start gap-2">
+                        <span class="text-red-600 font-bold mt-1">✗</span>
+                        <span class="flex-1">الأشخاص المصابون بأمراض معدية (التهاب الكبد، الإيدز)</span>
+                    </li>
+                    <li class="text-sm text-gray-600 flex items-start gap-2">
+                        <span class="text-red-600 font-bold mt-1">✗</span>
+                        <span class="flex-1">من أجرى عملية جراحية حديثاً (آخر 6 أشهر)</span>
+                    </li>
+                    <li class="text-sm text-gray-600 flex items-start gap-2">
+                        <span class="text-red-600 font-bold mt-1">✗</span>
+                        <span class="flex-1">الحوامل والمرضعات</span>
+                    </li>
+                    <li class="text-sm text-gray-600 flex items-start gap-2">
+                        <span class="text-red-600 font-bold mt-1">✗</span>
+                        <span class="flex-1">من يتناول أدوية معينة (استشر الطبيب)</span>
+                    </li>
+                    <li class="text-sm text-gray-600 flex items-start gap-2">
+                        <span class="text-red-600 font-bold mt-1">✗</span>
+                        <span class="flex-1">من لديه تاريخ مرضي مع أمراض القلب أو السكري غير المستقر</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-12 md:py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                    فوائد التبرع بالدم
+                </h2>
+                <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    التبرع بالدم له فوائد عديدة للمتبرع نفسه وللمجتمع ككل
+                </p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="mb-8">
+                <div class="grid grid-cols-2 gap-2 bg-gray-100 p-1 rounded-lg max-w-md mx-auto">
+                    <button onclick="showTab('donor')" id="donor-tab" class="tab-button active px-4 py-3 rounded-md font-medium transition-colors">
+                        فوائد للمتبرع
+                    </button>
+                    <button onclick="showTab('society')" id="society-tab" class="tab-button px-4 py-3 rounded-md font-medium transition-colors">
+                        فوائد للمجتمع
+                    </button>
+                </div>
+            </div>
+
+            <!-- Donor Benefits Content -->
+            <div id="donor-benefits" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-red-50 p-3 rounded-md">
+                            <i data-lucide="activity" class="w-6 h-6 text-red-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">تحسين صحة القلب</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                التبرع بالدم يقلل من لزوجة الدم ويحسن الدورة الدموية، مما يقلل من خطر الإصابة بأمراض القلب والأوعية الدموية
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-red-50 p-3 rounded-md">
+                            <i data-lucide="shield" class="w-6 h-6 text-red-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">فحص صحي مجاني</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                قبل التبرع، يتم فحص ضغط الدم، نبضات القلب، ومستوى الهيموجلوبين مجاناً للتأكد من سلامتك
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-red-50 p-3 rounded-md">
+                            <i data-lucide="sparkles" class="w-6 h-6 text-red-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">تجديد خلايا الدم</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                يحفز الجسم على إنتاج خلايا دم جديدة، مما يساعد في تجديد الدم والحفاظ على صحة أفضل
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-red-50 p-3 rounded-md">
+                            <i data-lucide="heart" class="w-6 h-6 text-red-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">الشعور بالرضا النفسي</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                إنقاذ حياة إنسان يمنحك شعوراً عميقاً بالسعادة والرضا عن النفس والمساهمة في المجتمع
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Society Benefits Content (Hidden by default) -->
+            <div id="society-benefits" class="hidden grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-red-50 p-3 rounded-md">
+                            <i data-lucide="users" class="w-6 h-6 text-red-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">إنقاذ الأرواح</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                توفير الدم للحالات الطارئة والعمليات الجراحية والمرضى الذين يعانون من أمراض مزمنة
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-red-50 p-3 rounded-md">
+                            <i data-lucide="heart" class="w-6 h-6 text-red-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">دعم المستشفيات</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                المحافظة على بنك دم كافٍ في المستشفيات لتلبية الاحتياجات الطبية المستمرة
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-red-50 p-3 rounded-md">
+                            <i data-lucide="shield" class="w-6 h-6 text-red-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">الاستعداد للكوارث</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                توفير مخزون دم جاهز للاستجابة السريعة في حالات الكوارث والحوادث الكبرى
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-red-50 p-3 rounded-md">
+                            <i data-lucide="activity" class="w-6 h-6 text-red-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">دعم البحث العلمي</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                المساهمة في الأبحاث الطبية وتطوير علاجات جديدة للأمراض المختلفة
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- قسم فوائد التبرع -->
-    <section id="benefits">
-        <div class="container">
-            <h2 class="section-title">فوائد التبرع بالدم</h2>
-            <div class="content">
-                <p>لا يقتصر التبرع بالدم على الفوائد للمحتاجين فقط، بل يعود بفوائد صحية ونفسية عديدة على المتبرع نفسه:</p>
-                <div class="cards-container">
-                    <div class="card">
-                        <h3>الفوائد الصحية</h3>
-                        <ul>
-                            <li>تقليل مخاطر الإصابة بأمراض القلب</li>
-                            <li>تحسين تدفق الدم</li>
-                            <li>تحفيز إنتاج خلايا دم جديدة</li>
-                            <li>الكشف المبكر عن بعض الأمراض</li>
-                        </ul>
+
+    <!-- Blood Types Section -->
+    <section id="blood-types" class="py-12 md:py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                    فصائل الدم وتوافقها
+                </h2>
+                <p class="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                    هناك ثمانية فصائل دم رئيسية، ولكل فصيلة خصائصها الفريدة في التبرع والاستقبال
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+                <!-- Blood Type O- -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="bg-red-50 px-4 py-2 rounded-md">
+                            <span class="text-2xl font-bold text-red-600">O-</span>
+                        </div>
+                        <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">المتبرع العام</span>
                     </div>
-                    <div class="card">
-                        <h3>الفوائد النفسية</h3>
-                        <ul>
-                            <li>الشعور بالرضا والمساهمة في إنقاذ الأرواح</li>
-                            <li>تعزيز الثقة بالنفس</li>
-                            <li>التخلص من التوتر والضغط النفسي</li>
-                            <li>تعزيز الروح الإنسانية والتكافل الاجتماعي</li>
-                        </ul>
+                    <div class="space-y-3">
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">نسبة الانتشار</p>
+                            <p class="text-sm font-semibold text-gray-900">7%</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">يمكن التبرع لـ</p>
+                            <p class="text-sm font-medium text-gray-900">جميع الفصائل</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">يمكن الاستقبال من</p>
+                            <p class="text-sm font-medium text-gray-900">O- فقط</p>
+                        </div>
                     </div>
+                </div>
+
+                <!-- Blood Type O+ -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="bg-red-50 px-4 py-2 rounded-md">
+                            <span class="text-2xl font-bold text-red-600">O+</span>
+                        </div>
+                        <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">الأكثر شيوعاً</span>
+                    </div>
+                    <div class="space-y-3">
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">نسبة الانتشار</p>
+                            <p class="text-sm font-semibold text-gray-900">38%</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">يمكن التبرع لـ</p>
+                            <p class="text-sm font-medium text-gray-900">جميع الفصائل الموجبة</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">يمكن الاستقبال من</p>
+                            <p class="text-sm font-medium text-gray-900">O+, O-</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blood Type A- -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="bg-red-50 px-4 py-2 rounded-md">
+                            <span class="text-2xl font-bold text-red-600">A-</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">نسبة الانتشار</p>
+                            <p class="text-sm font-semibold text-gray-900">6%</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">يمكن التبرع لـ</p>
+                            <p class="text-sm font-medium text-gray-900">A+, A-, AB+, AB-</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">يمكن الاستقبال من</p>
+                            <p class="text-sm font-medium text-gray-900">A-, O-</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blood Type A+ -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="bg-red-50 px-4 py-2 rounded-md">
+                            <span class="text-2xl font-bold text-red-600">A+</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">نسبة الانتشار</p>
+                            <p class="text-sm font-semibold text-gray-900">34%</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">يمكن التبرع لـ</p>
+                            <p class="text-sm font-medium text-gray-900">A+, AB+</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">يمكن الاستقبال من</p>
+                            <p class="text-sm font-medium text-gray-900">A+, A-, O+, O-</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blood Type B- -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="bg-red-50 px-4 py-2 rounded-md">
+                            <span class="text-2xl font-bold text-red-600">B-</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">نسبة الانتشار</p>
+                            <p class="text-sm font-semibold text-gray-900">2%</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">يمكن التبرع لـ</p>
+                            <p class="text-sm font-medium text-gray-900">B+, B-, AB+, AB-</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">يمكن الاستقبال من</p>
+                            <p class="text-sm font-medium text-gray-900">B-, O-</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blood Type B+ -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="bg-red-50 px-4 py-2 rounded-md">
+                            <span class="text-2xl font-bold text-red-600">B+</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">نسبة الانتشار</p>
+                            <p class="text-sm font-semibold text-gray-900">9%</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">يمكن التبرع لـ</p>
+                            <p class="text-sm font-medium text-gray-900">B+, AB+</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">يمكن الاستقبال من</p>
+                            <p class="text-sm font-medium text-gray-900">B+, B-, O+, O-</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blood Type AB- -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="bg-red-50 px-4 py-2 rounded-md">
+                            <span class="text-2xl font-bold text-red-600">AB-</span>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">نسبة الانتشار</p>
+                            <p class="text-sm font-semibold text-gray-900">1%</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">يمكن التبرع لـ</p>
+                            <p class="text-sm font-medium text-gray-900">AB+, AB-</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">يمكن الاستقبال من</p>
+                            <p class="text-sm font-medium text-gray-900">جميع الفصائل السالبة</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blood Type AB+ -->
+                <div class="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-all">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="bg-red-50 px-4 py-2 rounded-md">
+                            <span class="text-2xl font-bold text-red-600">AB+</span>
+                        </div>
+                        <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">المستقبل العام</span>
+                    </div>
+                    <div class="space-y-3">
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">نسبة الانتشار</p>
+                            <p class="text-sm font-semibold text-gray-900">3%</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">يمكن التبرع لـ</p>
+                            <p class="text-sm font-medium text-gray-900">AB+ فقط</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 mb-1">يمكن الاستقبال من</p>
+                            <p class="text-sm font-medium text-gray-900">جميع الفصائل</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-lg p-8">
+                <h3 class="text-xl font-bold text-gray-900 mb-4">معلومات مهمة عن فصائل الدم</h3>
+                <div class="space-y-4 text-gray-600">
+                    <p class="leading-relaxed">
+                        • <strong class="text-gray-900">O السالب (O-):</strong> يُعرف بـ "المتبرع العام" لأنه يمكن نقله لجميع فصائل الدم، وهو مطلوب جداً في الحالات الطارئة
+                    </p>
+                    <p class="leading-relaxed">
+                        • <strong class="text-gray-900">AB الموجب (AB+):</strong> يُعرف بـ "المستقبل العام" لأنه يمكنه استقبال الدم من جميع الفصائل
+                    </p>
+                    <p class="leading-relaxed">
+                        • <strong class="text-gray-900">عامل ريسوس (Rh):</strong> الموجب (+) يعني وجود بروتين معين، والسالب (-) يعني غيابه. هذا مهم جداً في نقل الدم
+                    </p>
+                    <p class="leading-relaxed">
+                        • <strong class="text-gray-900">أهمية التوافق:</strong> نقل دم غير متوافق قد يسبب مضاعفات خطيرة، لذا يُفحص الدم دائماً قبل النقل
+                    </p>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- قسم شروط التبرع -->
-    <section id="conditions">
-        <div class="container">
-            <h2 class="section-title">شروط التبرع بالدم</h2>
-            <div class="content">
-                <p>لضمان سلامة المتبرع والمتلقي، يجب الالتزام بالشروط التالية للتبرع بالدم:</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>الشروط العامة</th>
-                            <th>الشروط الصحية</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>أن يكون المتبرع بالغاً سليم العقلي</td>
-                            <td>أن يكون الوزن 50 كجم على الأقل</td>
-                        </tr>
-                        <tr>
-                            <td>أن يكون العمر بين 18 و65 سنة</td>
-                            <td>أن يكون المتبرع خالياً من الأمراض المعدية</td>
-                        </tr>
-                        <tr>
-                            <td>أن يكون الهوية الوطنية سارية المفعول</td>
-                            <td>أن لا يكون المتبرع مصاباً بفقر الدم</td>
-                        </tr>
-                        <tr>
-                            <td>أن لا يقل معدل الهيموجلوبين عن 12.5 جم/ديسيلتر</td>
-                            <td>أن لا يكون المتبرع قد تبرع بالدم خلال 3 أشهر</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-    
-    <!-- قسم مراحل التبرع -->
-    <section id="process">
-        <div class="container">
-            <h2 class="section-title">مراحل التبرع بالدم</h2>
-            <div class="content">
-                <p>تمر عملية التبرع بالدم بعدة مراحل لضمان سلامة العملية:</p>
-                <div class="cards-container">
-                    <div class="card">
-                        <h3>المرحلة الأولى: التسجيل</h3>
-                        <p>يتم تسجيل البيانات الشخصية للمتبرع وتعبئة استمارة التبرع.</p>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-12">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <i data-lucide="droplet" class="w-6 h-6 text-red-600"></i>
+                        <h3 class="text-lg font-bold text-gray-900">عن المشروع</h3>
                     </div>
-                    <div class="card">
-                        <h3>المرحلة الثانية: الفحص الطبي</h3>
-                        <p>يخضع المتبرع لفحص طبي بسيط وفحص لمستوى الهيموجلوبين.</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        مشروع تعليمي لمادة العلوم الطبيعية حول أهمية التبرع بالدم، شروطه وفوائده للمتبرع والمجتمع
+                    </p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-4">معلومات المؤسسة</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-2 text-sm text-gray-600">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-red-600 mt-1 shrink-0"></i>
+                            <span>متوسطة عيد فلاح - بريحان</span>
+                        </div>
+                        <div class="flex items-start gap-2 text-sm text-gray-600">
+                            <i data-lucide="mail" class="w-4 h-4 text-red-600 mt-1 shrink-0"></i>
+                            <span>المستوى: السنة الرابعة متوسط</span>
+                        </div>
+                        <div class="flex items-start gap-2 text-sm text-gray-600">
+                            <i data-lucide="phone" class="w-4 h-4 text-red-600 mt-1 shrink-0"></i>
+                            <span>المادة: العلوم الطبيعية</span>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3>المرحلة الثالثة: التبرع</h3>
-                        <p>يتم سحب كمية الدم (حوالي 450 مل) في غضون 5-10 دقائق.</p>
-                    </div>
-                    <div class="card">
-                        <h3>المرحلة الرابعة: الراحة والتغذية</h3>
-                        <p>يأخذ المتبرع قسطاً من الراحة ويتناول وجبة خفيفة لاستعادة الطاقة.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-4">روابط سريعة</h3>
+                    <div class="space-y-2">
+                        <a href="#importance" class="block text-sm text-gray-600 hover:text-red-600 transition-colors">أهمية التبرع بالدم</a>
+                        <a href="#conditions" class="block text-sm text-gray-600 hover:text-red-600 transition-colors">شروط التبرع</a>
+                        <a href="#benefits" class="block text-sm text-gray-600 hover:text-red-600 transition-colors">فوائد التبرع</a>
+                        <a href="#blood-types" class="block text-sm text-gray-600 hover:text-red-600 transition-colors">فصائل الدم</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <!-- الفوتر -->
-    <footer>
-        <div class="container">
-            <p>مشروع العلوم الطبيعية - مستوى الرابع متوسط</p>
-            <p>متوسطة عيد فلاح - بريحان</p>
-            <p>جميع الحقوق محفوظة &copy; 2023</p>
+
+            <div class="border-t border-gray-200 pt-8 text-center">
+                <p class="text-sm text-gray-600">
+                    © 2025 متوسطة عيد فلاح - بريحان. مشروع تعليمي للسنة الرابعة متوسط
+                </p>
+                <p class="text-xs text-gray-500 mt-2">
+                    التبرع بالدم... قطرة أمل تنقذ حياة ❤️
+                </p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Tab switching function
+        function showTab(tab) {
+            const donorTab = document.getElementById('donor-tab');
+            const societyTab = document.getElementById('society-tab');
+            const donorBenefits = document.getElementById('donor-benefits');
+            const societyBenefits = document.getElementById('society-benefits');
+
+            if (tab === 'donor') {
+                donorTab.classList.add('active');
+                societyTab.classList.remove('active');
+                donorBenefits.classList.remove('hidden');
+                societyBenefits.classList.add('hidden');
+            } else {
+                societyTab.classList.add('active');
+                donorTab.classList.remove('active');
+                societyBenefits.classList.remove('hidden');
+                donorBenefits.classList.add('hidden');
+            }
+        }
+    </script>
 </body>
-</html>
+        </html>
