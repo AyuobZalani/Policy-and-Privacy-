@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أهمية التبرع بالدم - مشروع العلوم الطبيعية</title>
+    <style>
+        /* تنسيقات عامة */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* تنسيقات الهيدر */
+        header {
+            background: linear-gradient(135deg, #c00 0%, #a00 100%);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* تنسيقات التنقل */
+        nav {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 15px 0;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #c00;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background-color: #c00;
+            color: white;
+        }
+        
+        /* تنسيقات الأقسام */
+        section {
+            padding: 60px 0;
+            background-color: white;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        section:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #c00;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #c00;
+        }
+        
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* تنسيقات البطاقات */
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            flex: 1 1 300px;
+            max-width: 350px;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card h3 {
+            color: #c00;
+            margin-bottom: 15px;
+            text-align: center;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+        
+        .card ul {
+            list-style-type: none;
+            padding-right: 20px;
+        }
+        
+        .card ul li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        .card ul li::before {
+            content: "•";
+            color: #c00;
+            font-weight: bold;
+            position: absolute;
+            right: -15px;
+        }
+        
+        /* تنسيقات الجدول */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: right;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #c00;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        /* تنسيقات الفوتر */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        footer p {
+            margin-bottom: 10px;
+        }
+        
+        /* تنسيقات الاستجابة */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الهيدر -->
+    <header>
+        <div class="container">
+            <h1>أهمية التبرع بالدم</h1>
+            <p>مشروع العلوم الطبيعية - مستوى الرابع متوسط - متوسطة عيد فلاح - بريحان</p>
+        </div>
+    </header>
+    
+    <!-- التنقل -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#importance">أهمية التبرع</a></li>
+                <li><a href="#benefits">فوائد التبرع</a></li>
+                <li><a href="#conditions">شروط التبرع</a></li>
+                <li><a href="#process">مراحل التبرع</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- قسم المقدمة -->
+    <section id="intro">
+        <div class="container">
+            <h2 class="section-title">مقدمة عن التبرع بالدم</h2>
+            <div class="content">
+                <p>التبرع بالدم هو عملية سحب كمية من الدم من شخص سليم لاستخدامها في إنقاذ حياة شخص آخر. يعتبر التبرع بالدم عملاً إنسانياً نبيلاً ينقذ حياة الملايين حول العالم كل عام. في هذا المشروع، سنستعرض أهمية التبرع بالدم، وفوائده، وشروطه، ومراحل عملية التبرع.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم أهمية التبرع -->
+    <section id="importance">
+        <div class="container">
+            <h2 class="section-title">أهمية التبرع بالدم</h2>
+            <div class="content">
+                <p>يعد التبرع بالدم من أهم الأعمال الإنسانية التي يمكن أن يقوم بها الفرد، وذلك للأسباب التالية:</p>
+                <div class="cards-container">
+                    <div class="card">
+                        <h3>إنقاذ الأرواح</h3>
+                        <p>كل تبرع بالدم يمكن أن ينقذ حياة ثلاثة أشخاص على الأقل، حيث يتم فصل الدم إلى مكوناته (كرات الدم الحمراء، البلازما، الصفائح الدموية).</p>
+                    </div>
+                    <div class="card">
+                        <h3>تعزيز الصحة العامة</h3>
+                        <p>يساعد التبرع بالدم في تحسين صحة المتبرع من خلال تحفيز نخاع العظم على إنتاج خلايا دم جديدة.</p>
+                    </div>
+                    <div class="card">
+                        <h3>تعزيز التكافل الاجتماعي</h3>
+                        <p>التبرع بالدم يعزز روح التكافل والتعاون بين أفراد المجتمع، حيث يساعد في بناء مجتمع صحي ومترابط.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم فوائد التبرع -->
+    <section id="benefits">
+        <div class="container">
+            <h2 class="section-title">فوائد التبرع بالدم</h2>
+            <div class="content">
+                <p>لا يقتصر التبرع بالدم على الفوائد للمحتاجين فقط، بل يعود بفوائد صحية ونفسية عديدة على المتبرع نفسه:</p>
+                <div class="cards-container">
+                    <div class="card">
+                        <h3>الفوائد الصحية</h3>
+                        <ul>
+                            <li>تقليل مخاطر الإصابة بأمراض القلب</li>
+                            <li>تحسين تدفق الدم</li>
+                            <li>تحفيز إنتاج خلايا دم جديدة</li>
+                            <li>الكشف المبكر عن بعض الأمراض</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>الفوائد النفسية</h3>
+                        <ul>
+                            <li>الشعور بالرضا والمساهمة في إنقاذ الأرواح</li>
+                            <li>تعزيز الثقة بالنفس</li>
+                            <li>التخلص من التوتر والضغط النفسي</li>
+                            <li>تعزيز الروح الإنسانية والتكافل الاجتماعي</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم شروط التبرع -->
+    <section id="conditions">
+        <div class="container">
+            <h2 class="section-title">شروط التبرع بالدم</h2>
+            <div class="content">
+                <p>لضمان سلامة المتبرع والمتلقي، يجب الالتزام بالشروط التالية للتبرع بالدم:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>الشروط العامة</th>
+                            <th>الشروط الصحية</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>أن يكون المتبرع بالغاً سليم العقلي</td>
+                            <td>أن يكون الوزن 50 كجم على الأقل</td>
+                        </tr>
+                        <tr>
+                            <td>أن يكون العمر بين 18 و65 سنة</td>
+                            <td>أن يكون المتبرع خالياً من الأمراض المعدية</td>
+                        </tr>
+                        <tr>
+                            <td>أن يكون الهوية الوطنية سارية المفعول</td>
+                            <td>أن لا يكون المتبرع مصاباً بفقر الدم</td>
+                        </tr>
+                        <tr>
+                            <td>أن لا يقل معدل الهيموجلوبين عن 12.5 جم/ديسيلتر</td>
+                            <td>أن لا يكون المتبرع قد تبرع بالدم خلال 3 أشهر</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم مراحل التبرع -->
+    <section id="process">
+        <div class="container">
+            <h2 class="section-title">مراحل التبرع بالدم</h2>
+            <div class="content">
+                <p>تمر عملية التبرع بالدم بعدة مراحل لضمان سلامة العملية:</p>
+                <div class="cards-container">
+                    <div class="card">
+                        <h3>المرحلة الأولى: التسجيل</h3>
+                        <p>يتم تسجيل البيانات الشخصية للمتبرع وتعبئة استمارة التبرع.</p>
+                    </div>
+                    <div class="card">
+                        <h3>المرحلة الثانية: الفحص الطبي</h3>
+                        <p>يخضع المتبرع لفحص طبي بسيط وفحص لمستوى الهيموجلوبين.</p>
+                    </div>
+                    <div class="card">
+                        <h3>المرحلة الثالثة: التبرع</h3>
+                        <p>يتم سحب كمية الدم (حوالي 450 مل) في غضون 5-10 دقائق.</p>
+                    </div>
+                    <div class="card">
+                        <h3>المرحلة الرابعة: الراحة والتغذية</h3>
+                        <p>يأخذ المتبرع قسطاً من الراحة ويتناول وجبة خفيفة لاستعادة الطاقة.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- الفوتر -->
+    <footer>
+        <div class="container">
+            <p>مشروع العلوم الطبيعية - مستوى الرابع متوسط</p>
+            <p>متوسطة عيد فلاح - بريحان</p>
+            <p>جميع الحقوق محفوظة &copy; 2023</p>
+        </div>
+    </footer>
+</body>
+</html>
